@@ -1,0 +1,50 @@
+
+
+1.3. 
+Can two teams have the same name?
+- no, it's part of the key
+How many security clearance levels can a mission have?
+- there can only be one "access_id" for each mission
+How many agents can speak a certain language?
+-  
+How many teams can an agent be on?
+- as many teams that exist
+How many agents can be on any given team?
+- as many agents that exist
+How many teams can participate in any given mission?
+- one
+Can two agents have different affliation_strengths to the same organization?
+- yes, different agents can be affiliated to the same organization (at any strength level)
+Can one agents have different affliation_strengths to the two different organizations?
+- no, you cant be affiliated to the same organization twice
+Can an agent be on more than one ongoing mission?
+- yes, they can be on multiple teams, and a team can be on more than one mission
+
+extend schema: add attribute to "skillrel" table, "Mastery" which would be an integer from 1-5
+
+3.1 
+select * from spy.team where team.meeting_frequency = 'monthly'
+20 rows
+team_id	name	meeting_frequency
+3
+	Roadkill	monthly
+4
+	Oink	monthly
+5
+	Blaster	monthly
+6
+	Timebomb	monthly
+8
+	Terminator	monthly
+
+3.2
+SELECT A.city
+FROM spy.agent A, spy.securityclearance C
+WHERE C.sc_level = 'Presidential' OR C.sc_level = 'Majestic'
+
+SELECT DISTINCT city
+FROM spy.agent
+WHERE agent.clearance_id < 3
+
+3.3
+
